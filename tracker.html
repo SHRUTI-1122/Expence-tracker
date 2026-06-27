@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="tracker.css">
+    <script src="tracker.js" defer></script>
+</head>
+<body>
+    <div class="app-shell">
+        <div class="container">
+            <div class="header">
+                <div>
+                    <p class="eyebrow">Budget control</p>
+                    <h1>Expense Tracker</h1>
+                    <p class="subtitle">Track where your money goes each month.</p>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <div class="summary-item">
+                    <span>Total Spent</span>
+                    <strong id="totalAmount">₹0.00</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Entries</span>
+                    <strong id="entryCount">0</strong>
+                </div>
+            </div>
+
+            <form id="expenseForm" class="expense-form">
+                <div class="field-group">
+                    <label for="expenseName">Name</label>
+                    <input type="text" id="expenseName" placeholder="e.g. Lunch" required>
+                </div>
+                <div class="field-group">
+                    <label for="expenseAmount">Amount</label>
+                    <input type="number" id="expenseAmount" min="0" step="0.01" placeholder="0.00" required>
+                </div>
+                <div class="field-group">
+                    <label for="expenseDate">Date</label>
+                    <input type="date" id="expenseDate" required>
+                </div>
+                <div class="field-group">
+                    <label for="expenseCategory">Category</label>
+                    <select id="expenseCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Food">Food</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Laundry">Laundry</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <button type="submit">Add Expense</button>
+            </form>
+
+            <div class="list-header">
+                <h2>Recent Expenses</h2>
+                <button id="clearAllBtn" class="secondary-btn" type="button">Clear All</button>
+            </div>
+            <div id="expenseList" class="expense-list"></div>
+        </div>
+    </div>
+</body>
+</html>
